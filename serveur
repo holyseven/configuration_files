@@ -1,0 +1,31 @@
+ssh sony-144@172.17.156.3
+
+ssh utc@172.17.131.191
+
+# Copy the data from the server to my Desktop.
+scp utc@172.17.131.191:/data/testlfov2nc/set00/v001/277.png /home/jacques/desktop/
+
+# Copy the data from my computer to the server.
+scp /home/jacques/Desktop/277.png utc@172.17.131.191:/home/utc/Desktop/
+
+# copy entire directories
+scp -r user@your.server.example.com:/path/to/foo /home/user/Desktop/
+
+# Check disk free and used.
+df
+
+# Check size of a file
+ls -l [filename] 
+du -b [filename]
+
+# Check size of a directory
+du -sb [path]
+du -sbm [path] # M
+
+# Remove a directory
+# The -r makes it delete the folder (and subfolders), even if it is non-empty,
+# -f is for force (this might be unnecessary).
+sudo rm -r -f /path/
+
+# Check modified time of a file
+stat [filename]
