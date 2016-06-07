@@ -29,3 +29,10 @@ sudo rm -r -f /path/
 
 # Check modified time of a file
 stat [filename]
+
+# Moving and renaming a directory
+mv [old location] [new location]
+
+
+# stop and start network manager:
+sudo service network-manager restart

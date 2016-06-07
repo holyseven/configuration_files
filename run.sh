@@ -4,6 +4,7 @@ sudo apt-get install -y terminator chromium-browser tmux qtcreator meld git glan
 # git ssh 
 # https://help.github.com/articles/checking-for-existing-ssh-keys/
 
+
 # vim install
 # https://github.com/Valloric/YouCompleteMe/wiki/Building-Vim-from-source
 # https://github.com/yangyangwithgnu/use_vim_as_ide#1
@@ -40,6 +41,9 @@ mkdir ~/phdwork/opencv3
 cd ~/phdwork
 git clone https://github.com/Itseez/opencv_contrib.git
 
+# This is interesting`
+sudo apt-get build-dep opencv
+
 cd ~/phdwork/opencv2.4
 git clone https://github.com/Itseez/opencv.git --branch 2.4
 mkdir release
@@ -47,12 +51,15 @@ cd release
 cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local/opencv2.4 -D OPENCV_EXTRA_MODULES_PATH=/home/jacques/phdwork/opencv_contrib/modules ..
 sudo make install -j8
 
+
 cd ~/phdwork/opencv3
 git clone https://github.com/Itseez/opencv.git
 mkdir release
 cd release
-cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local/opencv3 -D OPENCV_EXTRA_MODULES_PATH=/home/jacques/phdwork/opencv_contrib/modules -D WITH_TBB=ON -D BUILD_NEW_PYTHON_SUPPORT=ON -D WITH_V4L=ON WITH_QT=ON -D WITH_OPENGL=ON -D WITH_VTK=ON -D ENABLE_FAST_MATH=1 -D CUDA_FAST_MATH=1 -D WITH_CUBLAS=1 ..
+cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local/opencv3 -D OPENCV_EXTRA_MODULES_PATH=/home/jacques/phdwork/opencv_contrib/modules -D WITH_TBB=ON -D WITH_V4L=ON WITH_QT=ON -D WITH_OPENGL=ON -D INSTALL_PYTHON_EXAMPLES=ON -D INSTALL_C_EXAMPLES=OFF ..
+cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local/opencv3 -D WITH_TBB=ON -D WITH_V4L=ON WITH_QT=ON -D WITH_OPENGL=ON -D INSTALL_PYTHON_EXAMPLES=ON -D INSTALL_C_EXAMPLES=OFF ..
 sudo make install -j8
+
 
 # CUDNN v4
 # Download, dezip, and go to the path
