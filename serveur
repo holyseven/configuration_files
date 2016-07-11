@@ -22,6 +22,9 @@ du -b [filename]
 du -sb [path]
 du -sbm [path] # M
 
+# Check size of folders
+du -sch *
+
 # Remove a directory
 # The -r makes it delete the folder (and subfolders), even if it is non-empty,
 # -f is for force (this might be unnecessary).
@@ -36,3 +39,6 @@ mv [old location] [new location]
 
 # stop and start network manager:
 sudo service network-manager restart
+
+# mount the partition of win10 readonly at /mnt
+sudo mount -o ro /dev/sda2 /mnt
