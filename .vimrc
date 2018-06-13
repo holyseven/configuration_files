@@ -106,9 +106,9 @@ Plugin 'fholgado/minibufexpl.vim'
 Plugin 'gcmt/wildfire.vim'
 Plugin 'sjl/gundo.vim'
 Plugin 'Lokaltog/vim-easymotion'
-Plugin 'suan/vim-instant-markdown'
+"Plugin 'suan/vim-instant-markdown'
 Bundle 'uarun/vim-protobuf'
-Plugin 'vim-latex/vim-latex'
+"Plugin 'vim-latex/vim-latex'
 "Plugin 'xuhdev/vim-latex-live-preview'
 "Plugin 'mbrochh/vim-as-a-python-ide'
 "Plugin 'powerline/powerline'
@@ -319,8 +319,8 @@ map <C-S-Tab> :MBEbp<cr>
 
 """ jedi-vim for python
 " let g:jedi#completions_enabled = 1
-autocmd FileType python python sys.path.append('/home/jacques/phdwork/uptodate_caffe/caffe/python')
-autocmd FileType python python sys.path.append('/usr/local/opencv3/lib/python2.7/dist-packages')
+"autocmd FileType python python sys.path.append('/home/jacques/phdwork/uptodate_caffe/caffe/python')
+"autocmd FileType python python sys.path.append('/usr/local/opencv3/lib/python2.7/dist-packages')
 
 
 "" YCM configurations
