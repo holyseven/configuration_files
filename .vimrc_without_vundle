@@ -23,6 +23,9 @@ vnoremap <Leader>y "+y
 " 设置快捷键将系统剪贴板内容粘贴至vim
 nmap <Leader>p "+p
 
+" shortcut for tabnew
+nmap t :tabnew 
+
 " 定义快捷键关闭当前分割窗口
 nmap q :q<CR>
 " 定义快捷键保存当前窗口内容
@@ -31,6 +34,10 @@ nmap <C-W> :w<CR>
 nmap <Leader>WQ :wa<CR>:q<CR>
 " 不做任何保存，直接退出 vim
 nmap <Leader>Q :qa!<CR>
+
+" switch between tabs
+nnoremap <C-j> :tabprevious<CR>                                                                            
+nnoremap <C-k> :tabnext<CR>
 
 " 设置快捷键遍历子窗口
 " 依次遍历
@@ -76,7 +83,7 @@ set backspace=2
 " 插件安装
 
 " vundle 环境设置
-"filetype off
+filetype off
 "set rtp+=~/.vim/bundle/Vundle.vim
 "" vundle 管理的插件列表必须位于 vundle#begin() 和 vundle#end() 之间
 "" Setup Vundle (a lot of plugins):
@@ -113,7 +120,7 @@ set backspace=2
 "Plugin 'Valloric/YouCompleteMe'
 "Plugin 'derekwyatt/vim-protodef'
 "Plugin 'scrooloose/nerdtree'
-"Plugin 'fholgado/minibufexpl.vim'
+"" Plugin 'fholgado/minibufexpl.vim'
 "Plugin 'gcmt/wildfire.vim'
 "Plugin 'sjl/gundo.vim'
 "Plugin 'Lokaltog/vim-easymotion'
@@ -386,15 +393,14 @@ highlight PmenuSel ctermfg=2 ctermbg=3 guifg=#AFD700 guibg=#106900
 let g:ycm_complete_in_comments=1
 
 " 允许 vim 加载 .ycm_extra_conf.py 文件，不再提示
-let g:ycm_confirm_extra_conf=0
-
-let g:ycm_global_ycm_extra_conf = '.ycm_extra_conf.py'
+"let g:ycm_confirm_extra_conf=0
+"let g:ycm_global_ycm_extra_conf = '.ycm_extra_conf.py'
 
 " 开启 YCM 标签补全引擎
-let g:ycm_collect_identifiers_from_tags_files=1
+"let g:ycm_collect_identifiers_from_tags_files=1
 "" 引入 C++ 标准库 tags
-set tags+=/usr/include/c++/4.8/stdcpp.tags
-set tags+=~/phdwork/uptodate_caffe/caffe/tags
+"set tags+=/usr/include/c++/4.8/stdcpp.tags
+"set tags+=~/phdwork/uptodate_caffe/caffe/tags
 
 " YCM 集成 OmniCppComplete 补全引擎，设置其快捷键
 inoremap <leader>; <C-x><C-o>
@@ -415,12 +421,12 @@ let g:ycm_seed_identifiers_with_syntax=1
 let g:ycm_python_binary_pat= '/usr/share/python'
 
 " autocmd FileType tex setlocal makeprg=pdflatex\ --shell-escape\ '%'
-let g:tex_flavor='latex'
-set grepprg=grep\ -nH\ $*
-let g:Tex_CompileRule_dvi = 'latex --interaction=nonstopmode $*'
-let g:Tex_CompileRule_pdf = 'pdflatex -interaction=nonstopmode $*'
-let g:Tex_DefaultTargetFormat = 'pdf'
-let g:Tex_MultipleCompileFormats = 'pdf'
+" let g:tex_flavor='latex'
+" set grepprg=grep\ -nH\ $*
+" let g:Tex_CompileRule_dvi = 'latex --interaction=nonstopmode $*'
+" let g:Tex_CompileRule_pdf = 'pdflatex -interaction=nonstopmode $*'
+" let g:Tex_DefaultTargetFormat = 'pdf'
+" let g:Tex_MultipleCompileFormats = 'pdf'
 "set iskeyword+=:
 
 "autocmd Filetype tex setl updatetime=3000
