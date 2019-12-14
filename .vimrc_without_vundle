@@ -9,6 +9,8 @@ filetype on
 " 根据侦测到的不同类型加载对应的插件
 filetype plugin on
 
+set mouse=a
+
 " <<
 
 " >>
